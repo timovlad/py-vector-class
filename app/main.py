@@ -20,14 +20,15 @@ class Vector:
             return Vector(self.x_coordinate * other,
                           self.y_coordinate * other)
         elif isinstance(other, Vector):
-            return round(self.x_coordinate * other.x_coordinate +
-                         self.y_coordinate * other.y_coordinate, 4)
+            return round(self.x_coordinate * other.x_coordinate
+                         + self.y_coordinate * other.y_coordinate, 4)
         else:
             raise ValueError("Unsupported type for multiplication")
 
     @classmethod
-    def create_vector_by_two_points(cls, start_point: Tuple[float, float], 
-                                    end_point: Tuple[float, float]) -> "Vector":
+    def create_vector_by_two_points
+    (cls, start_point: Tuple[float, float],
+     end_point: Tuple[float, float]) -> "Vector":
         return cls(end_point[0] - start_point[0], end_point[1] - start_point[1])
 
     def get_length(self) -> float:
