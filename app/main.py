@@ -8,16 +8,20 @@ class Vector:
         self.y_coordinate = round(y_coordinate, 2)
 
     def __add__(self, other: "Vector") -> "Vector":
-        return Vector(self.x_coordinate + other.x_coordinate, self.y_coordinate + other.y_coordinate)
+        return Vector(self.x_coordinate + other.x_coordinate,
+                      self.y_coordinate + other.y_coordinate)
 
     def __sub__(self, other: "Vector") -> "Vector":
-        return Vector(self.x_coordinate - other.x_coordinate, self.y_coordinate - other.y_coordinate)
+        return Vector(self.x_coordinate - other.x_coordinate,
+                      self.y_coordinate - other.y_coordinate)
 
     def __mul__(self, other: any) -> any:
         if isinstance(other, (int, float)):
-            return Vector(self.x_coordinate * other, self.y_coordinate * other)
+            return Vector(self.x_coordinate * other,
+                          self.y_coordinate * other)
         elif isinstance(other, Vector):
-            return round(self.x_coordinate * other.x_coordinate + self.y_coordinate * other.y_coordinate, 4)
+            return round(self.x_coordinate * other.x_coordinate +
+                         self.y_coordinate * other.y_coordinate, 4)
         else:
             raise ValueError("Unsupported type for multiplication")
 
