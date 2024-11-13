@@ -41,4 +41,15 @@ class Vector:
         if lengths_product == 0:
             return 0
         cos_a = dot_product / lengths_product
-        cos_a = max(min(cos_a, 
+        cos_a = max(min(cos_a, 1), -1)
+        angle = math.degrees(math.acos(cos_a))
+        return round(angle)
+
+    def get_angle(self) -> int:
+        return self.angle_between(Vector(0, 1))
+
+    def rotate(self, degrees: int) -> "Vector":
+        radians = math.radians(degrees)
+        new_x = self.x_coordinate * math.cos(radians) - self.y_coordinate * math.sin(radians)
+        new_y = self.x_coordinate * math.sin(radians) + self.y_coordinate * math.cos(radians)
+        return Vector(new_x, new_y)
