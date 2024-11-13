@@ -9,8 +9,8 @@ class Vector:
 
     @property
     def x(self) -> float:
-        return self.x_coord    
-    
+        return self.x_coord
+
     @property
     def y(self) -> float:
         return self.y_coord
