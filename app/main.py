@@ -3,9 +3,16 @@ from typing import Tuple
 
 
 class Vector:
-    def __init__(self, x: float, y: float) -> None:
-        self.x = round(x, 2)
-        self.y = round(y, 2)
+    def __init__(self, x_coord: float, y_coord: float) -> None:
+        self.x_coord = round(x_coord, 2)
+        self.y_coord = round(y_coord, 2)
+
+    @property
+    def x(self) -> float:
+        return self.x_coord
+    @property
+    def y(self) -> float:
+        return self.y_coord
 
     def __add__(self, other: "Vector") -> "Vector":
         return Vector(self.x + other.x, self.y + other.y)
